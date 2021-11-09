@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="a">
+        <input type="text" name="b">
+        <input type="text" name="c">
+        <button type="submit">poukładaj</button>
+    </form>
+    <div class="jeden"></div>
+    <div class="dwa"></div>
+    <div class="trzy"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const jeden = document.querySelector('.jeden');
+        const dwa = document.querySelector('.dwa');
+        const trzy = document.querySelector('.trzy');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name="a"]').value;
+            const b = document.querySelector('input[name="b"]').value;
+            const c = document.querySelector('input[name="c"]').value;
+            if (a<=b){
+                if (a<=c){
+                    jeden.textContent = a;
+                    if(b<=c){
+                        dwa.textContent = b;
+                        trzy.textContent = c;
+                    }
+                    else{
+                        dwa.textContent = c;
+                        trzy.textContent = b;
+                    }
+                }
+                else{
+                    jeden.textContent = c;
+                    dwa.textContent = a;
+                    trzy.textContent = b;
+                }
+            }
+            else{
+                if(b<=c){
+                    jeden.textContent = b;
+                    if(a<=c){
+                        dwa.textContent = a;
+                        trzy.textContent = c;
+                    }
+                    else{
+                        dwa.textContent = c;
+                        trzy.textContent = a;
+                    }
+                }
+                else{
+                    jeden.textContent = c;
+                    dwa.textContent = b;
+                    trzy.textContent = a;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

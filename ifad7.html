@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="dzialanie"><br>
+        <input type="text" name="a">
+        <input type="text" name="b">
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const wynik = document.querySelector('.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name="a"]').value;
+            const b = document.querySelector('input[name="b"]').value;
+            const dzialanie = document.querySelector('input[name="dzialanie"]').value;
+            if (dzialanie == "+"){
+                const wynik = a*1 + b*1;
+                alert("wynikiem dodania " + a + " i " + b + " jest " + wynik);
+            }
+            else if (dzialanie == "-"){
+                const wynik = a*1 - b*1;
+                alert("wynikiem odejmowania " + a + " i " + b + " jest " + wynik);
+            }
+            else if (dzialanie == "*"){
+                const wynik = a*1 * b*1;
+                alert("wynikiem mnożnia " + a + " i " + b + " jest " + wynik);
+            }
+            else if (dzialanie == "/"){
+                const wynik = a*1 / b*1;
+                alert("wynikiem dzielenia " + a + " i " + b + " jest " + wynik);
+            }
+        });
+    </script>
+</body>
+</html>
