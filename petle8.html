@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input placeholder="Podaj n" type="text" name="a">
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const wynik = document.querySelector('.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name="a"]').value;
+            let p = 0;
+            let np = 0;
+            for(let i = 1; i <= a; i++){
+                if(i%2==0){
+                    p++;
+                }
+                else{
+                    np++;
+                }
+            }
+            document.write("Liczb parzystych jest: " + p + "<br> Liczb nieparzystych jest: " + np);
+        });
+    </script>
+</body>
+</html>
