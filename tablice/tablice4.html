@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="min"></div>
+    <div class="max"></div>
+    <div class="tablica"></div>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        const min = document.querySelector('min');
+        const max = document.querySelector('max');
+        const n = prompt('Wprowadź wielkość tablicy');
+        const tablica = document.querySelector('.tablica');
+        let tab = [];
+        for(let i = 0; i < n; i++){
+            tab[i]=getRandomInt(0, 100);
+        }
+        
+        min.textContent = 'Liczba najmniejsza' + math.min(tab);
+        tablica.textContent = tab.join(', ');
+    </script>
+</body>
+</html>

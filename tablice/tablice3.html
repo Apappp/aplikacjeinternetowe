@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        let tab = [];
+        for(let i = 0; i < 100; i++){
+            tab[i]=getRandomInt(0, 100);
+        }
+
+        let suma = 0;
+        for(let j = 0; j < 100; j++){
+            suma+=tab[j];
+        }
+
+        let ilezer = 0;
+        for (const l of tab){
+            if (tab[l] == 0) ilezer++; 
+        }
+        document.write(tab.join(', '));
+        document.write("</br>Suma: " + suma);
+        document.write("</br>liczba zer: " + ilezer);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input placeholder="rodzaj działania" type="text" name="dzialanie"><br>
+        <input type="text" name="a">
+        <input type="text" name="b">
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const wynik = document.querySelector('.wynik');
+        function dodawanie(liczba1, liczba2){
+            return liczba1*1 + liczba2*1;
+        }
+
+        function odejmowanie(liczba1, liczba2){
+            return liczba1*1 - liczba2*1;
+        }
+
+        function mnozenie (liczba1, liczba2){
+            return liczba1*liczba2;
+        }
+
+        function dzielenie (liczba1, liczba2){
+            return liczba1/liczba2;
+        }
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name="a"]').value;
+            const b = document.querySelector('input[name="b"]').value;
+            const dzialanie = document.querySelector('input[name="dzialanie"]').value;
+            if (dzialanie == "+")
+                document.write(dodawanie(a,b));
+            else if (dzialanie == "-")
+                document.write(odejmowanie(a,b));
+            else if (dzialanie == "*")
+                document.write(mnozenie(a,b));
+            else if (dzialanie == "/")
+                document.write(dzielenie(a,b));
+        });
+    </script>
+</body>
+</html>
