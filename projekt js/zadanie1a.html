@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="jeden">
+        <input type="number" name="dwa">
+        <input type="number" name="trzy">
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            let a = document.querySelector('input[name="jeden"]').value*1;
+            let b = document.querySelector('input[name="dwa"]').value*1;
+            let c = document.querySelector('input[name="trzy"]').value*1;
+            if((b => a)&&(b => c)){
+                if(b==a){
+                    if(b==c){
+                        document.write("Wszystkie liczby są równe i mają wartość: " + b);
+                    }
+                    else{
+                        document.write("Liczby a oraz b są równe i mają wartość: " + b);
+                    }
+                }
+                else if(b==c){
+                    document.write("liczby b oraz c są równe i mają wartość: " + b);
+                }
+                else{
+                    document.write("liczba b jest największa i ma wartość: " + b);
+                }
+                
+            }
+            else if((a>b)&&(a>=c)){
+                if(a==c){
+                    document.write("Liczby a oraz c są równe i mają wartość: " + a);
+                }
+                else{
+                    document.write("Liczba a jest największa i ma wartość: " + a);
+                }
+            }
+            else{
+                document.write("Liczba c jest największa i ma wartość: " + c);
+            }
+            
+        });
+    </script>
+</body>
+</html>

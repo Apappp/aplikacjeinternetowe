@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="a" placeholder="Współczynnik a">
+        <input type="text" name="b" placeholder="Współczynnik b">
+        <input type="text" name="c" placeholder="Współczynnik c">
+        <button type="submit">oblicz</button>
+    </form>
+    <script>
+        const formularz = document.querySelector('form');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name="a"]').value*1;
+            const b = document.querySelector('input[name="b"]').value*1;
+            const c = document.querySelector('input[name="c"]').value*1;
+            let delta = (b*b)-4*a*c;
+            document.write("Wartość delty: " + delta + "</br>");
+            if(delta > 0){
+                let xj = ((-b)-Math.sqrt(delta))/(2*a);
+                let xd = ((-b)+Math.sqrt(delta))/(2*a);
+                document.write("Wartości pierwiastków to " + xj + " i " + xd);
+            }
+            else if(delta==0){
+                let x = (-b)/(2*a);
+                document.write("Wartość pierwiastka to " + x);
+            }
+            else{
+                document.write("Funkcja nie ma pierwiastków");
+            }
+        });
+    </script>
+</body>
+</html>
