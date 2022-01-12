@@ -22,7 +22,7 @@
             let a = document.querySelector('input[name="jeden"]').value*1;
             let b = document.querySelector('input[name="dwa"]').value*1;
             let c = document.querySelector('input[name="trzy"]').value*1;
-            if((b => a)&&(b => c)){
+            if((b >= a)&&(b >= c)){
                 if(b==a){
                     if(b==c){
                         document.write("Wszystkie liczby są równe i mają wartość: " + b);
